@@ -1,0 +1,84 @@
+
+<!-- <input type="text"  oninput="addDisplay()" id="word"> -->
+
+<!------------------------------------------------------------------------------>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="stylesheet" href="css/style.css?v=2">
+    <title>type speed tester</title>
+   
+  
+  </head>
+  <body onbeforeunload="return close()">
+    <div class="container">
+      <div class="car">
+        <!-- <div class="leftlabel">
+          <span> <br />You </span>
+          <span> <br />You </span>
+          <span> <br />You </span>
+          <span> <br />You </span>
+        </div> -->
+        <div class="carAction">
+          <div class="track">
+            <span class="imagetitle"><img src="image/shuttle.png" id="img1" /></span>
+            <span class="imagetitle"><img src="image/shuttle.png" id="img2" style="opacity: 0.5" /></span>
+            <span class="imagetitle"><img src="image/shuttle.png" id="img3" style="opacity: 0.5" /></span>
+            <span class="imagetitle"><img src="image/shuttle.png" id="img4" style="opacity: 0.5" /></span>
+            <!-- <hr /> -->
+          </div>
+          <!-- <div class="track"> <img src="ballon1.png" id="img2"><hr></div>
+      <div class="track"> <img src="ballon1.png" id="img3"><hr></div>
+        <div class="track"> <img src="ballon1.png" id="img4"><hr></div> -->
+        </div>
+      </div>
+      <div class="box1">
+        <div class="boxhead">
+          <center>
+      
+            <h2 id="msg" ></h2>
+          </center>
+        </div>
+        <div class="boxtext">
+          <textarea
+            id="myWords"
+            cols="100"
+            rows="7"
+            placeholder="Remember , be nice !" oninput="highlighter()" disabled></textarea>
+          <center><button id="btn" class="mainbtn">READY</button></center>
+          <p align="center">
+            <img src="https://raw.githubusercontent.com/bornmay/bornmay/Update/svg/Bottom.svg" alt="Github Stats" />
+    </p>
+    
+        </div>
+      </div>
+    
+    </div>
+    <!--container  </div> -->
+  </body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script>
+    // deleting the creator row 
+    var room2 ;
+var cookiesarray2 =  document.cookie.split(";");
+    for (let i = 0; i < cookiesarray2.length; i++) {
+  if (cookiesarray2[i].split("=")[0] == "room");
+  room2 = cookiesarray2[i].split("=")[1];
+}
+$.ajax({
+  url: "./player.php",
+  data: {  id: 6 ,room: room2 },
+  type: "POST",
+  success: function (result) {
+   
+  }
+});
+  </script>
+  <script src="js/player.js?v=2"></script>
+</html>
